@@ -1,5 +1,5 @@
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Граф, состоящий из островов, некоторые из которых связаны мотами.
@@ -10,30 +10,31 @@ public class Graph {
      * Массив вертиц, представляющих острова́.
      * Изменение их количества не предполагается в жизни графа.
      */
-    Vertex[] vertices_info;
+    Vertex[] vertices;
 
     public Graph(int V) {
-        vertices_info = new Vertex[V];
-        Arrays.fill(vertices_info, new Vertex());
+        vertices = new Vertex[V];
+        IntStream.range(0, V).forEach(i -> vertices[i] = new Vertex());
     }
 
 
-    void add_edge(int a, int b) {
-        vertices_info[a].add(b);
-        vertices_info[b].add(a);
+    Graph add_edge(int a, int b) {
+        vertices[a].add(b);
+        vertices[b].add(a);
+        return this;
     }
 
 
     List<Integer> adjacent(int vertexIndex) {
-        return vertices_info[vertexIndex].getAdjacents();
+        return vertices[vertexIndex].getAdjacents();
     }
 
-    vertices() {
-        return номера от 0 до V
-    }
+//    vertices() {
+//        return номера от 0 до V
+//    }
 
     int size() {
-        return vertices_info.length;
+        return vertices.length;
     }
 
 
