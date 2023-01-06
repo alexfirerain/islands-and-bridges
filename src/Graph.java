@@ -14,7 +14,7 @@ public class Graph {
 
     public Graph(int V) {
         vertices = new Vertex[V];
-        IntStream.range(0, V).forEach(i -> vertices[i] = new Vertex());
+        vertices().forEach(i -> vertices[i] = new Vertex());
     }
 
 
@@ -29,9 +29,9 @@ public class Graph {
         return vertices[vertexIndex].getAdjacents();
     }
 
-//    vertices() {
-//        return номера от 0 до V
-//    }
+    IntStream vertices() {
+        return IntStream.range(0, size());
+    }
 
     int size() {
         return vertices.length;
