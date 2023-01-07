@@ -24,7 +24,7 @@ public class Main {
                 .add_edge(1, 2)
                 .add_edge(3, 4);
 
-        calc_paths(archipelago);
+        calcPaths(archipelago);
 
         archipelago.vertices().forEach(i ->
                 System.out.printf("С острова №%d по мостам достижимо островов: %d%n",
@@ -49,7 +49,7 @@ public class Main {
         return size;
     }
 
-    static void calc_paths(Graph graph) {
+    static void calcPaths(Graph graph) {
 
         groupIndices = new int[graph.size()];
         groupSizes = new ArrayList<>((int) Math.ceil(Math.sqrt(graph.size())) + 1);

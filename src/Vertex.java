@@ -1,15 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Vertex {
 
-    List<Integer> adjacents = new ArrayList<>();
+    Set<Integer> adjacents = new HashSet<>();
 
     void add(int v) {
         adjacents.add(v);
     }
 
-    List<Integer> getAdjacents() {
+    Set<Integer> getAdjacents() {
         return adjacents;
     }
 

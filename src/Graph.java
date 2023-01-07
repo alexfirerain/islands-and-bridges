@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Set;
 import java.util.stream.IntStream;
 
 /**
@@ -25,7 +25,7 @@ public class Graph {
     }
 
 
-    List<Integer> adjacent(int vertexIndex) {
+    Set<Integer> adjacent(int vertexIndex) {
         return vertices[vertexIndex].getAdjacents();
     }
 
